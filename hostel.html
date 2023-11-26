@@ -5,7 +5,9 @@
     <title>Hostel Management</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/bootstrap-5.3.2-dist/css/bootstrap.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Noto+Serif:wght@100&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 
 
@@ -13,9 +15,12 @@
 <main class="container-fluid">
 
 <!---------------------------------header--------------------------->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+    <header>
+
+    <nav class="navbar navbar-expand-lg bg-warning" style="position: relative; height: 13vh;" >
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Hostel Management</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,11 +48,13 @@
         </div>
     </nav>
 
-
+    </header>
 <!---------------------------------student management----------------->
+
+    <h1 style="font-size: 28px; font-family: 'Ubuntu', sans-serif;" >Student Management</h1>
     <section class="row">
 
-        <section class="col">
+        <section class="col-12">
 
         <label for="inputPassword5" class="form-label">Student Id  :</label>
         <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
@@ -70,35 +77,44 @@
 
         </section>
 
-        <section class="col">
+        <section class=" col-12">
 
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">Student Id</th>
-                    <th scope="col">Student Name</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
                     <th scope="col">Address</th>
                     <th scope="col">Contact Number</th>
-                    <th scope="col">DOB</th>
-                    <th scope="col">Gender</th>
+<!--                    <th scope="col">DOB</th>-->
+<!--                    <th scope="col">Gender</th>-->
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>Nimal</td>
+                    <th scope="row">1</th>
+                    <td>Ramani</td>
                     <td>Matara</td>
-                    <td>0771809014</td>
-                    <td>1964/03/03</td>
-                    <td>femel</td>
+                    <td>0773748001</td>
                 </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Gimal</td>
+                    <td>Matara</td>
+                    <td>0714117461</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td >Wasntha</td>
+                    <td>Male</td>
+                    <td>0775745585</td>
 
+                </tr>
                 </tbody>
             </table>
         </section>
+
     </section>
-
-
 </main>
 
 
