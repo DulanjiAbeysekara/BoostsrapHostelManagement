@@ -2,88 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hostel Management</title>
-    <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=PT+Mono&family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.css">
-    <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="../hostel.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Client Information Sheet</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <img src="your-logo-url.png" alt="Your Company Logo">
+        <h2>YourCompany</h2>
+    </div>
 
-<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <!-----------------------------------------------------header----------------------------------------------->
-        <div class="bg-dark col-auto col-md-2 min-vh-100 w-25">
-            <div class="bg-dark p-2">
-                <a id="mainTopic" class="d-flex text-decoration-none mt-1 pt-1  align-items-center text-white">
-                    <span class="fs-4 d-none d-sm-inline">Hostel Management</span>
-                </a>
-                <ul class="nav nav-pills flex-column mt-5 ">
-                    <li id="subTopic" class="nav-item ">
-                        <a href="#" class="nav-link text-white" >
-                            <i class="fs-5 fa fa-gauge"></i><span class="fs-5 ms-3 d-none d-sm-inline">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item mt-4">
-                        <a href="#" class="nav-link text-white" >
-                            <i class="fs-5 fa-solid fa-house"></i><span class="fs-5 ms-3 d-none d-sm-inline">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item mt-4">
-                        <a href="#" class="nav-link text-white" >
-                            <i class="fs-5 fa fa-users"></i><span class="fs-5 ms-3 d-none d-sm-inline">Student</span>
-                        </a>
-                    </li>
-                    <li class="nav-item mt-4">
-                        <a href="#" class="nav-link text-white" >
-                            <i class="fs-5 fa fa-door-open"></i><span class="fs-5 ms-3 d-none d-sm-inline">Rooms</span>
-                        </a>
-                    </li>
-                    <li class="nav-item mt-4">
-                        <a href="#" class="nav-link text-white" >
-                            <i class="fs-5 fa fa-calendar-days"></i><span class="fs-5 ms-3 d-none d-sm-inline">Reservation</span>
-                        </a>
-                    </li>
-                    <li  id="singIn" class="nav-item mt-5 pt-3">
-                        <a href="#" class="nav-link text-white" >
-                            <i class="fs-5 fa fa-light fa-user"></i><span class="fs-5 ms-3 d-none d-sm-inline">Sign In</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <div class="card">
+        <div class="card-header text-center">
+            Real Estate Client Information Sheet
         </div>
-        <!---------------------------------------------------customer details--------------------------------------->
-        <div class="col-10">
-            <div class="row justify-content-end">
-                <div class="col-12 col-md-10 col-lg-8">
-                    <h2 id="customerDetails" class="mt-5 text-center">Customer Details</h2>
-                    <table class="table table-light table-striped table-bordered table-hover ">
-                        <thead class="text-light table-primary text-center table-bordered sticky-top">
-                        <tr>
-                            <th scope="col">Student Id</th>
-                            <th scope="col">Student Name</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Contact No</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Gender</th>
-                        </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+
+        <div class="card-body">
+            <form>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="fileNumber">File Number</label>
+                        <input type="text" class="form-control" id="fileNumber" placeholder="First Name">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="clientSource">Client Source</label>
+                        <select id="clientSource" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>Source 1</option>
+                            <option>Source 2</option>
+                            <option>Source 3</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="agreedFee">Agreed Upon Fee</label>
+                    <input type="text" class="form-control" id="agreedFee" placeholder="Fee Amount">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="clientFirstName">Client Name</label>
+                        <input type="text" class="form-control" id="clientFirstName" placeholder="First Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="clientLastName">&nbsp;</label>
+                        <input type="text" class="form-control mt-2" id="clientLastName" placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="clientEmail">Client Email Address</label>
+                    <input type="email" class="form-control" id="clientEmail" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Client Phone Number</label>
+                    <input type="text" class="form-control" id="clientPhone" placeholder="Phone Number">
+                </div>
+            </form>
         </div>
-
-
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

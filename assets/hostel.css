@@ -24,6 +24,21 @@
     font-family: Mitr;
     font-weight: 800;
 }
+.modal-content{
+    max-width:100%;
+}
 
+.form-group label{
+    font-family:Prata
+    Static;
+    font-weight:bolder;
+}
 
-
+.modal-header{
+    background-color:darkgrey;
+}
+/*#searchBtn{*/
+/*    top:48%;*/
+/*    left: 30%;*/
+/*    position: absolute;*/
+/*}*/
