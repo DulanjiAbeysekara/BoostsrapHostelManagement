@@ -2,70 +2,222 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Estate Client Information Sheet</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Hostel Management</title>
+    <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=PT+Mono&family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.css">
+    <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../hostel.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container mt-5">
-    <div class="text-center mb-4">
-        <img src="your-logo-url.png" alt="Your Company Logo">
-        <h2>YourCompany</h2>
-    </div>
-
-    <div class="card">
-        <div class="card-header text-center">
-            Real Estate Client Information Sheet
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <!-----------------------------------------------------header----------------------------------------------->
+        <div class="bg-dark col-auto col-md-2 min-vh-100 w-25">
+            <div class="bg-dark p-2">
+                <a id="mainTopic" class="d-flex text-decoration-none mt-1 pt-1 align-items-center text-white">
+                    <span class="fs-4 d-none d-sm-inline">Hostel Management</span>
+                </a>
+                <ul class="nav nav-pills flex-column mt-5">
+                    <li id="subTopic" class="nav-item">
+                        <a href="#" class="nav-link text-white">
+                            <i class="fs-5 fa fa-gauge"></i><span class="fs-5 ms-3 d-none d-sm-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mt-4">
+                        <a href="#" class="nav-link text-white">
+                            <i class="fs-5 fa-solid fa-house"></i><span class="fs-5 ms-3 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mt-4">
+                        <a href="#" class="nav-link text-white">
+                            <i class="fs-5 fa fa-users"></i><span class="fs-5 ms-3 d-none d-sm-inline">Student</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mt-4">
+                        <a href="#" class="nav-link text-white">
+                            <i class="fs-5 fa fa-door-open"></i><span class="fs-5 ms-3 d-none d-sm-inline">Rooms</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mt-4">
+                        <a href="#" class="nav-link text-white">
+                            <i class="fs-5 fa fa-calendar-days"></i><span class="fs-5 ms-3 d-none d-sm-inline">Reservation</span>
+                        </a>
+                    </li>
+                    <li id="signIn" class="nav-item mt-5 pt-3">
+                        <a href="#" class="nav-link text-white">
+                            <i class="fs-5 fa fa-light fa-user"></i><span class="fs-5 ms-3 d-none d-sm-inline">Sign In</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <div class="card-body">
-            <form>
-
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="fileNumber">File Number</label>
-                        <input type="text" class="form-control" id="fileNumber" placeholder="First Name">
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label for="clientSource">Client Source</label>
-                        <select id="clientSource" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>Source 1</option>
-                            <option>Source 2</option>
-                            <option>Source 3</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="agreedFee">Agreed Upon Fee</label>
-                    <input type="text" class="form-control" id="agreedFee" placeholder="Fee Amount">
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="clientFirstName">Client Name</label>
-                        <input type="text" class="form-control" id="clientFirstName" placeholder="First Name">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="clientLastName">&nbsp;</label>
-                        <input type="text" class="form-control mt-2" id="clientLastName" placeholder="Last Name">
+        <!---------------------------------------------------customer details--------------------------------------->
+        <div class="col">
+            <div class="row justify-content-center my-3">
+                <div class="col-8 col-sm-6 col-md-10 col-lg-8 d-flex flex-column align-items-center">
+                    <h2 id="customerDetails" class="mt-5">Customer Details</h2>
+                    <div class="table-responsive mt-4 w-100">
+                        <table class="table table-light table-striped table-bordered table-hover">
+                            <thead class="text-light table-primary text-center table-bordered sticky-top">
+                            <tr>
+                                <th scope="col">Student Id</th>
+                                <th scope="col">Student Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Contact No</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Gender</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="clientEmail">Client Email Address</label>
-                    <input type="email" class="form-control" id="clientEmail" placeholder="Email Address">
+                <!-------------------------------------------------------student btn--------------------------------->
+                <div id="searchBtn" class="row justify-content-start mt-5 pt-5 align-content-lg-start">
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-8 mt-5 pt-5">
+                        <div class="d-flex mt-5 pt-5">
+                            <div class="input-group me-2 fw-semibold w-50" style="flex: 1; ">
+                                <input type="text" placeholder="Student Id/Contact No" class="form-control" id="txtSearchCustomer">
+                                <button type="button" class="btn btn-primary" id="btnSearch">Search</button>
+                            </div>
+                            <button type="button" class="btn btn-warning fw-semibold" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">+Add New Student</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="clientPhone">Client Phone Number</label>
-                    <input type="text" class="form-control" id="clientPhone" placeholder="Phone Number">
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
+<!----------------------------- Modal --------------------------------------------->
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header">
+                php
+                Copy code
+                <div id="custHeader">
+                    <i class="fs-5 fa-solid fa-user-plus"></i>
+                    <h1 class="modal-title fs-5 ms-3" id="exampleModalLabel">Student Information Form</h1>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+                    <div class="row">
+
+                        <div class="col-6">
+                            <div class="form-group mb-4 mt-2">
+                                <label for="txtStudentId">Student Id</label>
+                                <input type="text" class="form-control" id="txtStudentId" placeholder="Student Id">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group mb-4 mt-2 ">
+                                <label for="txtStudentId">Gender</label>
+                                <select class="form-control" id="txtGender">
+                                    <option value="MALE">MALE</option>
+                                    <option value="FEMALE">FEMALE</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-4">
+                            <div class="form-group mb-4 mt-2">
+                                <label for="txtStudentName">Student Name</label>
+                                <select class="form-control" id="txtStudentName">
+                                    <option value="Title">Title</option>
+                                    <option value="Ms">Ms</option>
+                                    <option value="Miss">Miss</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Mr">Mr</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="form-group mb-4 mt-2">
+                                <label for="txtStudentFirstName">First Name</label>
+                                <input type="text" class="form-control" id="txtStudentFirstName" placeholder="First">
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="form-group mb-4 mt-2">
+                                <label for="txtStudentFirstName">Last Name</label>
+                                <input type="text" class="form-control" id="txtStudentLastName" placeholder="Last Name">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="form-group mb-4 mt-2">
+                                <label for="txtAddress">Address</label>
+                                <input type="text" class="form-control" id="txtAddress" placeholder="Address">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-6 mb-4 mt-2">
+                            <div class="form-group">
+                                <label for="txtContactNum">Phone Number</label>
+                                <input type="text" class="form-control" id="txtContactNum" placeholder="Contact Number">
+                            </div>
+                        </div>
+
+                        <div class="col-6 mb-4 mt-2">
+                            <div class="form-group ">
+                                <label for="txtDob">Date Of Birth</label>
+                                <input type="date" class="form-control" id="txtDob" placeholder="BirthDay">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="form-group mb-4 mt-2">
+                                <label for="txtEmail">Email</label>
+                                <input type="email" class="form-control" id="txtEmail" placeholder="Email">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

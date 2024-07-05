@@ -37,8 +37,7 @@
 .modal-header{
     background-color:darkgrey;
 }
-/*#searchBtn{*/
-/*    top:48%;*/
-/*    left: 30%;*/
-/*    position: absolute;*/
-/*}*/
+
+.modal-title {
+    margin-left: 10px; /* Adjust as necessary */
+}
