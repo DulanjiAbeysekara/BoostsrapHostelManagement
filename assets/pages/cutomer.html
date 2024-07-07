@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
 
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const genderDropdown = document.getElementById('txtGender');
@@ -103,6 +104,9 @@
                                 <button type="button" class="btn btn-primary" id="btnSearch">Search</button>
                             </div>
                             <button type="button" class="btn btn-warning fw-semibold mt-2 mt-md-0" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">+Add New Student</button>
+                            <button type="button" class="btn btn-danger fw-semibold mt-2 mt-md-0 ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Update</button>
+                            <button type="button" class="btn btn-success fw-semibold mt-2 mt-md-0 ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Delete</button>
+
                         </div>
                     </div>
                 </div>
@@ -114,7 +118,7 @@
 <!----------------------------- Modal --------------------------------------------->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content gradient-background">
             <div class="modal-header">
                 <div id="custHeader" class="d-flex align-items-center">
                     <i class="fs-5 fa-solid fa-user-plus"></i>

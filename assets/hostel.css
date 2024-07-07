@@ -35,9 +35,51 @@
 }
 
 .modal-header{
-    background-color:darkgrey;
+    background-color:gray;
 }
 
-.modal-title {
-    margin-left: 10px; /* Adjust as necessary */
+
+.modal-content {
+    position: relative;
+    background-image: url('img/images (18).jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
 }
+
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity here */
+    z-index: 1;
+}
+
+.modal-content .modal-body,
+.modal-content .modal-header,
+.modal-content .modal-footer {
+    position: relative;
+    z-index: 2;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content label {
+    color: #fff;
+}
+
+.modal-content .form-control {
+    background: rgba(255, 255, 255, 0.2);
+    /*border: none;*/
+    font-weight: bolder;
+
+    /*color: white;*/
+}
+
+.modal-content .form-control::placeholder {
+    color: #ddd;
+}
+
