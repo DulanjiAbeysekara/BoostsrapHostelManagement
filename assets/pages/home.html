@@ -2,9 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hostel Management</title>
+    <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=PT+Mono&family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.css">
+    <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../hostel.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const genderDropdown = document.getElementById('txtGender');
+            const genderDropdownIcon = document.getElementById('genderDropdownIcon');
+
+            genderDropdownIcon.addEventListener('click', function() {
+                const currentIndex = genderDropdown.selectedIndex;
+                const nextIndex = (currentIndex + 1) % genderDropdown.options.length;
+                genderDropdown.selectedIndex = nextIndex;
+            });
+        });
+
+        document.getElementById("student")
+
+    </script>
+    <script src="../../controller/HomeController.js"></script>
 </head>
 <body>
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <!-----------------------------------------------------header----------------------------------------------->
+        <div class="bg-dark col-auto col-md-2 min-vh-100 w-25">
+            <div class="bg-dark p-2">
+                <a id="mainTopic" class="d-flex text-decoration-none mt-1 pt-1 align-items-center text-white">
+                    <span class="fs-4 d-none d-sm-inline">Hostel Management</span>
+                </a>
+                <ul class="nav nav-pills flex-column mt-5">
+                    <li id="subTopic" class="nav-item">
+                        <a href="dashboard.html" class="nav-link text-white" id="dashboard">
+                            <i class="fs-5 fa fa-gauge"></i><span class="fs-5 ms-3 d-none d-sm-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mt-4">
+                        <a href="home.html" class="nav-link text-white" id="home">
+                            <i class="fs-5 fa-solid fa-house"></i><span class="fs-5 ms-3 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mt-4">
+                        <a href="cutomer.html" class="nav-link text-white" id="student">
+                            <i class="fs-5 fa fa-users"></i><span class="fs-5 ms-3 d-none d-sm-inline">Student</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mt-4">
+                        <a href="room.html" class="nav-link text-white" id="room">
+                            <i class="fs-5 fa fa-door-open"></i><span class="fs-5 ms-3 d-none d-sm-inline">Rooms</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mt-4">
+                        <a href="reservation.html" class="nav-link text-white" id="reservation">
+                            <i class="fs-5 fa fa-calendar-days"></i><span class="fs-5 ms-3 d-none d-sm-inline">Reservation</span>
+                        </a>
+                    </li>
+                    <li id="signIn" class="nav-item mt-5 pt-3">
+                        <a href="#" class="nav-link text-white">
+                            <i class="fs-5 fa fa-light fa-user"></i><span class="fs-5 ms-3 d-none d-sm-inline">Sign In</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
+
+<script src="../bootstrap-5.3.2-dist/jquery-3.6.1.min.js"></script>
+
 </html>
