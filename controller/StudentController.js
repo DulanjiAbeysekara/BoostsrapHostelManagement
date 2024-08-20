@@ -23,7 +23,16 @@ $('#btnSave').click(function () {
       email: email
    };
 
-   studentList.push(student);
+   // Check if the student already exists
+   var existingIndex = studentList.findIndex(st => st.id === id);
+   if (existingIndex !== -1) {
+      // Update the existing student
+      studentList[existingIndex] = student;
+   } else {
+      // Add new student
+      studentList.push(student);
+   }
+
    getAll();
    clearForm();
 });
@@ -31,7 +40,7 @@ $('#btnSave').click(function () {
 function getAll() {
    $('.studentTable').empty();
 
-   for (var student of studentList)  {
+   for (var student of studentList) {
       var row = `<tr>
             <td>${student.id}</td>
             <td>${student.title} ${student.firstName} ${student.lastName}</td>
@@ -41,7 +50,7 @@ function getAll() {
             <td>${student.gender}</td>
         </tr>`;
       $('.studentTable').append(row);
-   };
+   }
 
    bindClickEvents();
 }
@@ -61,7 +70,7 @@ function clearForm() {
 function bindClickEvents() {
    $('.studentTable tr').click(function () {
       let id = $(this).children('td:nth-child(1)').text();
-      let fullName = $(this).children('td:nth-child(2)').text();
+      let fullName = $(this).children('td:nth-child(2)').text().split(' ');
       let address = $(this).children('td:nth-child(3)').text();
       let phoneNum = $(this).children('td:nth-child(4)').text();
       let email = $(this).children('td:nth-child(5)').text();
@@ -69,12 +78,11 @@ function bindClickEvents() {
 
       $('#txtStudentId').val(id);
       $('#txtGender').val(gender);
-      $('#txtStudentName').val(fullName.split(' ')[0]);
-      $('#txtStudentFirstName').val(fullName.split(' ')[1]);
-      $('#txtStudentLastName').val(fullName.split(' ')[2]);
+      $('#txtStudentName').val(fullName[0]);
+      $('#txtStudentFirstName').val(fullName[1]);
+      $('#txtStudentLastName').val(fullName[2] || ''); // Handle case if last name is missing
       $('#txtAddress').val(address);
       $('#txtContactNum').val(phoneNum);
       $('#txtEmail').val(email);
    });
 }
-
