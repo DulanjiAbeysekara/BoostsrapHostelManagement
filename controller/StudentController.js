@@ -1,5 +1,6 @@
 
 //    alert('Hi!');
+var studentList=[];
 
 $('#btnSave').click(function (){
 
@@ -25,5 +26,14 @@ student={
    email:email
    }
 
-   console.log(student);
+   getAll();
 });
+
+function  getAll(){
+   for(var student in studentList){
+
+      var row=" <tr><td >student.Student Id</td> <td>student.Student Name</td><td>student.Address</td> <td>student.Contact No</td> <thd>student.Email</td> <td>student.Gender</td> </tr>";
+      $('#studentTable').append(row);
+   }
+
+}
