@@ -25,6 +25,7 @@ $('#btnSave').click(function () {
 
    studentList.push(student);
    getAll();
+   clearForm();
 });
 
 function getAll() {
@@ -41,4 +42,39 @@ function getAll() {
         </tr>`;
       $('.studentTable').append(row);
    };
+
+   bindClickEvents();
 }
+
+function clearForm() {
+   $('#txtStudentId').val('');
+   $('#txtGender').val('MALE');
+   $('#txtStudentName').val('Mr');
+   $('#txtStudentFirstName').val('');
+   $('#txtStudentLastName').val('');
+   $('#txtAddress').val('');
+   $('#txtContactNum').val('');
+   $('#txtDob').val('');
+   $('#txtEmail').val('');
+}
+
+function bindClickEvents() {
+   $('.studentTable tr').click(function () {
+      let id = $(this).children('td:nth-child(1)').text();
+      let fullName = $(this).children('td:nth-child(2)').text();
+      let address = $(this).children('td:nth-child(3)').text();
+      let phoneNum = $(this).children('td:nth-child(4)').text();
+      let email = $(this).children('td:nth-child(5)').text();
+      let gender = $(this).children('td:nth-child(6)').text();
+
+      $('#txtStudentId').val(id);
+      $('#txtGender').val(gender);
+      $('#txtStudentName').val(fullName.split(' ')[0]);
+      $('#txtStudentFirstName').val(fullName.split(' ')[1]);
+      $('#txtStudentLastName').val(fullName.split(' ')[2]);
+      $('#txtAddress').val(address);
+      $('#txtContactNum').val(phoneNum);
+      $('#txtEmail').val(email);
+   });
+}
+
