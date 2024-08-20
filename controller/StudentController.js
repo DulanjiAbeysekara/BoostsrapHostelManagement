@@ -1,39 +1,44 @@
+var studentList = [];
 
-//    alert('Hi!');
-var studentList=[];
+$('#btnSave').click(function () {
+   var id = $('#txtStudentId').val();
+   var gender = $('#txtGender').val();
+   var title = $('#txtStudentName').val();
+   var firstName = $('#txtStudentFirstName').val();
+   var lastName = $('#txtStudentLastName').val();
+   var address = $('#txtAddress').val();
+   var phoneNum = $('#txtContactNum').val();
+   var dob = $('#txtDob').val();
+   var email = $('#txtEmail').val();
 
-$('#btnSave').click(function (){
+   var student = {
+      id: id,
+      gender: gender,
+      title: title,
+      firstName: firstName,
+      lastName: lastName,
+      address: address,
+      phoneNum: phoneNum,
+      dob: dob,
+      email: email
+   };
 
-var id=$('#txtStudentId').val();
-var gender=$('#txtGender').val();
-var name=$('#txtStudentName').val();
-var firstName=$('#txtStudentFirstName').val();
-var lastName=$('#txtStudentLastName').val();
-var address=$('#txtAddress').val();
-var phoneNum=$('#txtContactNum').val();
-var dob=$('#txtDob').val();
-var email=$('#txtEmail').val();
-
-student={
-   id:id,
-   gender:gender,
-   name:name,
-   firstName:firstName,
-   lastName:lastName,
-   address:address,
-   phoneNum:phoneNum,
-   dob:dob,
-   email:email
-   }
-
+   studentList.push(student);
    getAll();
 });
 
-function  getAll(){
-   for(var student in studentList){
+function getAll() {
+   $('.studentTable').empty();
 
-      var row=" <tr><td >student.Student Id</td> <td>student.Student Name</td><td>student.Address</td> <td>student.Contact No</td> <thd>student.Email</td> <td>student.Gender</td> </tr>";
-      $('#studentTable').append(row);
-   }
-
+   for (var student of studentList)  {
+      var row = `<tr>
+            <td>${student.id}</td>
+            <td>${student.title} ${student.firstName} ${student.lastName}</td>
+            <td>${student.address}</td>
+            <td>${student.phoneNum}</td>
+            <td>${student.email}</td>
+            <td>${student.gender}</td>
+        </tr>`;
+      $('.studentTable').append(row);
+   };
 }
