@@ -5,38 +5,22 @@
     <title>Hostel Management</title>
     <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=PT+Mono&family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.css">
-    <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="../hostel.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const genderDropdown = document.getElementById('txtGender');
-            const genderDropdownIcon = document.getElementById('genderDropdownIcon');
-
-            genderDropdownIcon.addEventListener('click', function() {
-                const currentIndex = genderDropdown.selectedIndex;
-                const nextIndex = (currentIndex + 1) % genderDropdown.options.length;
-                genderDropdown.selectedIndex = nextIndex;
-            });
-        });
-
-        document.getElementById("student")
-
-    </script>
-    <script src="../../controller/HomeController.js"></script>
+    <style>
+        /* Adding background image to white section */
+        .container-fluid {
+            background-image: url('../img/hostel1.jpg'); /* Update this with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* Ensures it takes the full viewport height */
+        }
+    </style>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <!-----------------------------------------------------header----------------------------------------------->
         <div class="bg-dark col-auto col-md-2 min-vh-100 w-25">
             <div class="bg-dark p-2">
                 <a id="mainTopic" class="d-flex text-decoration-none mt-1 pt-1 align-items-center text-white">
@@ -78,9 +62,5 @@
         </div>
     </div>
 </div>
-
 </body>
-
-<script src="../bootstrap-5.3.2-dist/jquery-3.6.1.min.js"></script>
-
 </html>
