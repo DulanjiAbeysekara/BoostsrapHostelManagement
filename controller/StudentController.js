@@ -23,14 +23,11 @@ $('#btnSave').click(function () {
       email: email
    };
 
-   // Check if the student already exists
    var existingIndex = studentList.findIndex(st => st.id === id);
    if (existingIndex !== -1) {
-      // Update the existing student
-      studentList[existingIndex] = student;
+      studentList[existingIndex] = student; // Update existing student
    } else {
-      // Add new student
-      studentList.push(student);
+      studentList.push(student); // Add new student
    }
 
    getAll();
@@ -48,12 +45,14 @@ function getAll() {
             <td>${student.phoneNum}</td>
             <td>${student.email}</td>
             <td>${student.gender}</td>
+            <td><button id="btnDelete" class="btn btn-success fw-semibold mt-2 mt-md-0 ms-2">Delete</button></td>
         </tr>`;
       $('.studentTable').append(row);
    }
 
    bindClickEvents();
 }
+
 
 function clearForm() {
    $('#txtStudentId').val('');
@@ -68,6 +67,7 @@ function clearForm() {
 }
 
 function bindClickEvents() {
+   // Click to edit a student
    $('.studentTable tr').click(function () {
       let id = $(this).children('td:nth-child(1)').text();
       let fullName = $(this).children('td:nth-child(2)').text().split(' ');
@@ -80,9 +80,20 @@ function bindClickEvents() {
       $('#txtGender').val(gender);
       $('#txtStudentName').val(fullName[0]);
       $('#txtStudentFirstName').val(fullName[1]);
-      $('#txtStudentLastName').val(fullName[2] || ''); // Handle case if last name is missing
+      $('#txtStudentLastName').val(fullName[2] || '');
       $('#txtAddress').val(address);
       $('#txtContactNum').val(phoneNum);
       $('#txtEmail').val(email);
    });
+
+   // Click to delete a student
+   $('#btnDelete').click(function (e) {
+      e.stopPropagation(); // Prevent row click event when clicking delete
+
+      let id = $(this).closest('tr').children('td:nth-child(1)').text();
+      studentList = studentList.filter(student => student.id !== id);
+
+      getAll();
+   });
 }
+
