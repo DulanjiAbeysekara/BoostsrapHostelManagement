@@ -97,3 +97,39 @@ function bindClickEvents() {
    });
 }
 
+
+// Search Button Functionality
+$('#btnSearch').click(function () {
+   var searchQuery = $('#txtSearchCustomer').val().trim().toLowerCase();
+
+   if (searchQuery === "") {
+      alert("Please enter a Student ID or Contact Number to search.");
+      return;
+   }
+
+   var filteredStudents = studentList.filter(student =>
+       student.id.toLowerCase() === searchQuery ||
+       student.phoneNum.toLowerCase() === searchQuery
+   );
+
+   if (filteredStudents.length > 0) {
+      $('.studentTable').empty(); // Clear the table
+      for (var student of filteredStudents) {
+         var row = `<tr>
+                <td>${student.id}</td>
+                <td>${student.title} ${student.firstName} ${student.lastName}</td>
+                <td>${student.address}</td>
+                <td>${student.phoneNum}</td>
+                <td>${student.email}</td>
+                <td>${student.gender}</td>
+                <td><button id="btnDelete" class="btn btn-success fw-semibold mt-2 mt-md-0 ms-2">Delete</button></td>
+            </tr>`;
+         $('.studentTable').append(row);
+      }
+      bindClickEvents();
+   } else {
+      alert("No student found with the provided ID or Contact Number.");
+   }
+});
+
+
